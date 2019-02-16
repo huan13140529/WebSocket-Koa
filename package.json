@@ -1,0 +1,25 @@
+{
+  "name": "websocket-koa",
+  "version": "1.0.0",
+  "description": "A WebSocket demo with Koa",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haoliwq/WebSocket-Koa.git"
+  },
+  "keywords": [
+    "websocket",
+    "koa"
+  ],
+  "author": "haoli",
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^2.7.0",
+    "koa-router": "^7.4.0",
+    "ws": "^6.1.3"
+  }
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WebSocket 客户端</title>
+</head>
+<body>
+    <p>WebSocket 客户端</p>
+    <script> 
+        const ws = new WebSocket('ws://localhost:8888');
+
+        ws.onopen = () => {
+            console.log('WebSocket onopen');
+            ws.send('From client: i am from client');
+        }
+
+        ws.onmessage = e => {
+            console.log('WebSocket onmessage');
+            console.log('WebSocket message received：', e);
+            console.log('WebSocket data received：', e.data);
+        }
+
+        ws.onclose = e => {
+            console.log("WebSocket onclose");
+        };    
+    </script>
+</body>
+</html>

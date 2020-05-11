@@ -64,15 +64,23 @@
   const ws = new WebSocket.Server({port: 8888});
 
   ws.on('connection', ws => {
-      console.log('server connection');
-
       ws.on('message', msg => {
         console.log('server receive msg：', msg);
+        if(msg === '你好') {
+          ws.send('遇见你真高兴');
+        } else if(msg === '哈哈') {
+          ws.send('小哥哥，人家单身呢');
+        } else if(msg === '无聊') {
+          ws.send('小哥哥，不要走嘛！和人家多聊一会嘛');
+        } else if(msg === '在吗') {
+          ws.send('小哥哥，我一直都在你身边！');
+        } else {
+          ws.send(msg)  //接收到啥就返回啥
+        }
       });
-
-      ws.send('Information from the server');
+      // ws.send('有点意思');
   });
 
-  app.listen(3000);
+  app.listen(3009);
 
 
